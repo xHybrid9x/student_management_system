@@ -20,4 +20,14 @@ class Courses{
             return courses_found;
         };
 
+        list<Course*> get_department_courses(int id){
+            list<Course*> department_courses;
+            for(Course* course : get_courses()){
+                Department* dep = course.get_department();
+                if (dep.get_id() == id){
+                    department_courses.push_front(course);
+                }
+            }
+        }
+
 };

@@ -16,4 +16,5 @@ class Course{
         string get_title();
         Instructor* get_professor();
         set<int> get_days();
+        Department* get_department();
 };
