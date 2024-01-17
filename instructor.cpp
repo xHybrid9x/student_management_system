@@ -1,6 +1,6 @@
 #include <iostream>
 #include "list"
-#include "header/instructor.h"
+#include "instructor.h"
 using namespace std;
 
 Instructor::Instructor(string first, string last){

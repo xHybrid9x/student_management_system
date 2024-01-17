@@ -1,11 +1,13 @@
 #include <iostream>
 #include "list"
 #include "department.h"
+#include "instructor.h"
 
 void main_menu_selection();
 list<Department> add_departments();
 
 list<Department> new_deps = add_departments();
+list<Instructor> instructors = {};
 
 int main() {
     bool displayMenu = true;
@@ -40,6 +42,22 @@ void create_new_department(string input){
     }
 }
 
+void create_new_instructor(string f_name, string l_name) {
+    bool instructorExists = false;
+    for (Instructor instructor : instructors) {
+        if (instructor.get_name() == l_name + ", " + f_name) {
+            cout << "Instructor name : " << l_name + ", " + f_name << " already exists." << endl;
+            instructorExists = true;
+            break;
+        }
+    }
+    if (!instructorExists) {
+        Instructor new_instructor(f_name, l_name);
+        cout << "New Instructor " << new_instructor.get_name() << " was created." << endl;
+        instructors.push_front(new_instructor);
+    }
+}
+
 void main_menu_selection(){
     list<string> options {"Choose your selection", "Create Deparment : Press 0", "Create Instructor: Press 1", "Create Course: Press 2", "Create Student: Press 3"};
     for(string choice : options){
@@ -58,7 +76,16 @@ void main_menu_selection(){
             break;
         }
         case 1:
+        {
+            string f_name;
+            string l_name;
+            cout << "Enter the instructor's first name: " << endl;
+            cin >> f_name;
+            cout << "Enter the instructor's last_name name: " << endl;
+            cin >> l_name;
+            create_new_instructor(f_name, l_name);
             break;
+        }
         case 2:
             break;
         default:
