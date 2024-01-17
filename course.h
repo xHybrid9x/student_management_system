@@ -1,6 +1,9 @@
+#ifndef COURSE_H
+#define COURSE_H
 #include <iostream>
-#include "instructor.h"
 #include "department.h"
+#include "instructor.h"
+#include "student.h"
 #include "set"
 using namespace std;
 
@@ -18,3 +21,4 @@ class Course{
         set<int> get_days();
         Department* get_department();
 };
+#endif COURSE_H

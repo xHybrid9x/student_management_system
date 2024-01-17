@@ -17,3 +17,6 @@ Instructor* Course::get_professor(){
 set<int> Course::get_days(){
     return days;
 }
+Department* Course::get_department(){
+    return department;
+}

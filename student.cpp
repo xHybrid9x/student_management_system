@@ -1,5 +1,5 @@
 #include <iostream>
-#include "student.h"
+#include "header/student.h"
 using namespace std;
 
 Student::Student(string first_name, string last_name, string email, string pw){

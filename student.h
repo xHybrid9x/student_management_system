@@ -1,4 +1,9 @@
+#ifndef STUDENT_H
+#define STUDENT_H
 #include <iostream>
+#include "department.h"
+#include "course.h"
+#include "instructor.h"
 using namespace std;
 
 class Student
@@ -19,3 +24,4 @@ class Student
         void add_address();
         int get_phone_number();    
 };
+#endif STUDENT_H
